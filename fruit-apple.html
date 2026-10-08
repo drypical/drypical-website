@@ -1,0 +1,457 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Dried Apple — Drypical | Real Fruit • Real Flavor</title>
+<meta name="description" content="Dried Apple by Drypical: its origin and history, how we select, dry and pack it, its benefits and the best ways to enjoy it — including teas and infusions." />
+<link rel="icon" href="assets/logo.jpg" />
+<style>
+    :root{
+      --paper:#fffdf6; --paper-2:#fff3db; --card:#ffffff; --ink:#1e2418; --muted:#6f684f;
+      --line:#eee0bf; --green:#145c2c; --green-text:#177233; --green-btn:#23863e; --green-btn-hover:#1a6e31;
+      --gold:#f5b81f; --gold-soft:#fce9b8; --orange:#f26a1d; --orange-deep:#c85008;
+      --shadow:0 18px 45px rgba(122,72,8,.14); --shadow-sm:0 8px 24px rgba(122,72,8,.10);
+      --radius:18px; --header-h:72px;
+      --font-display:"Bricolage Grotesque","Arial Rounded MT Bold",system-ui,sans-serif;
+      --font-body:"Figtree",system-ui,-apple-system,"Segoe UI",sans-serif;
+    }
+    @media (prefers-color-scheme:dark){
+      :root{--paper:#161106;--paper-2:#221a0c;--card:#262012;--ink:#fff6e2;--muted:#c9b995;--line:#40351e;--green-text:#86e09a;--gold-soft:#5a4714;--orange:#ff9440;--orange-deep:#e85d0c;--shadow:0 18px 45px rgba(0,0,0,.5);--shadow-sm:0 8px 24px rgba(0,0,0,.4)}
+      .btn-orange,.chat-fab{background:var(--orange-deep)!important}
+    }
+    *{box-sizing:border-box} html{scroll-behavior:smooth}
+    body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--font-body);font-size:17px;line-height:1.65}
+    h1,h2,h3{font-family:var(--font-display);line-height:1.08;letter-spacing:-.02em;margin:0 0 .55em}
+    h2{font-size:clamp(2rem,4.4vw,3rem)} p{margin:0 0 1em} a{color:var(--orange-deep)}
+    .wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+    section{padding:72px 0;scroll-margin-top:calc(var(--header-h) + 36px)}
+    .lead{font-size:1.13rem;color:var(--muted);line-height:1.6}
+    .eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:.78rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--green-text);margin-bottom:16px}
+    .eyebrow::before{content:"";width:28px;height:2px;background:var(--gold);display:inline-block}
+    :focus-visible{outline:3px solid var(--gold);outline-offset:3px;border-radius:6px}
+
+    /* Announcement + Header */
+    .announce{background:var(--green);color:#fff;text-align:center;padding:9px 16px;font-size:.88rem;font-weight:700}
+    .announce a{color:var(--gold);text-decoration:underline;text-underline-offset:3px}
+    .site-header{position:sticky;top:0;z-index:60;height:var(--header-h);background:color-mix(in srgb,var(--paper) 90%,transparent);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+    .site-header .wrap{height:100%;display:flex;align-items:center;gap:14px}
+    .logo-badge{display:inline-flex;background:#fff;border-radius:12px;padding:3px;border:1px solid rgba(120,84,20,.18);box-shadow:0 2px 10px rgba(90,62,10,.12);flex-shrink:0}
+    .logo-badge img{display:block;width:52px;height:52px;border-radius:9px;object-fit:cover}
+    .wordmark{font-family:var(--font-display);font-weight:800;font-size:1.3rem;color:var(--ink);text-decoration:none}.wordmark span{color:var(--orange)}
+    .domain{font-size:.72rem;font-weight:800;letter-spacing:.08em;color:var(--muted);display:block;line-height:1;margin-top:1px}
+    .nav{display:flex;gap:24px;margin-left:auto;align-items:center}
+    .nav a{color:var(--ink);text-decoration:none;font-weight:600;font-size:.96rem}.nav a:hover{color:var(--orange)}
+    .nav-cta{background:var(--ink);color:var(--paper)!important;padding:10px 18px;border-radius:999px}
+    .cart-btn{display:inline-flex;align-items:center;gap:8px;background:var(--green-btn);color:#fff;border:none;border-radius:999px;padding:10px 16px;font:700 .9rem var(--font-body);cursor:pointer;flex-shrink:0;transition:background .15s,transform .15s}
+    .cart-btn:hover{background:var(--green-btn-hover);transform:translateY(-1px)}
+    .cart-btn .cart-tag{font-size:.62rem;font-weight:900;letter-spacing:.07em;background:var(--gold);color:#3a2a08;border-radius:999px;padding:3px 8px;text-transform:uppercase}
+    .menu-btn{display:none;margin-left:auto;background:none;border:1px solid var(--line);border-radius:10px;padding:9px;cursor:pointer;color:var(--ink)}
+    .mobile-menu{display:none;border-bottom:1px solid var(--line);background:var(--paper);padding:8px 24px 18px}
+    .mobile-menu a{display:block;padding:13px 4px;color:var(--ink);text-decoration:none;font-weight:700;border-top:1px solid var(--line)} .mobile-menu.open{display:block}
+
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:none;border-radius:999px;cursor:pointer;font:700 1rem var(--font-body);text-decoration:none;padding:15px 30px;transition:transform .15s,background .15s,box-shadow .15s}
+    .btn-orange{background:var(--orange);color:#fff;box-shadow:0 10px 24px rgba(242,106,29,.35)} .btn-orange:hover{background:var(--orange-deep);transform:translateY(-2px)}
+    .btn-green{background:var(--green-btn);color:#fff}.btn-green:hover{background:var(--green-btn-hover);transform:translateY(-2px)}
+    .btn-ghost{background:transparent;color:var(--ink);border:2px solid var(--line)} .btn-ghost:hover{border-color:var(--orange);color:var(--orange)}
+    .btn-white{background:#fff;color:var(--green)} .btn-outline-light{background:transparent;color:#fff;border:2px solid rgba(255,255,255,.5)}
+    .btn-sm{padding:11px 22px;font-size:.92rem}
+
+    /* HERO — Prompt 2: promise + proof + one action in <10s */
+    .hero{padding:64px 0 56px;background:radial-gradient(900px 420px at 85% -10%,rgba(245,184,31,.22),transparent 60%),linear-gradient(180deg,var(--paper-2),var(--paper) 78%)}
+    .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center}
+    .hero h1{font-size:clamp(2.9rem,6vw,4.6rem);font-weight:800}
+    .hero h1 em{font-style:normal;color:var(--orange)}
+    .hero-sub{font-size:1.22rem;color:var(--muted);max-width:32rem}
+    .proof{display:grid;grid-template-columns:1fr 1fr;gap:10px 18px;max-width:30rem;margin:22px 0 6px;padding:0;list-style:none}
+    .proof li{font-weight:700;font-size:.96rem;display:flex;gap:9px;align-items:center}.proof li::before{content:"✓";width:22px;height:22px;flex:0 0 22px;display:grid;place-items:center;background:#e6f4e9;color:var(--green-text);border-radius:50%;font-size:.8rem;font-weight:900}
+    @media(prefers-color-scheme:dark){.proof li::before{background:#1e3d27}}
+    .hero-ctas{display:flex;gap:14px;flex-wrap:wrap;margin-top:24px}
+    .micro{font-size:.86rem;color:var(--muted);margin-top:12px}
+    .hero-art{position:relative}
+    .hero-frame{background:var(--card);border:1px solid var(--line);border-radius:28px;padding:14px;box-shadow:var(--shadow)}
+    .hero-frame img{display:block;width:100%;height:auto;border-radius:20px}
+    .sticker{position:absolute;top:-20px;right:-8px;background:var(--green);color:#fff;border-radius:50%;width:112px;height:112px;display:flex;flex-direction:column;align-items:center;justify-content:center;transform:rotate(8deg);font-family:var(--font-display);font-weight:800;line-height:1.05;box-shadow:0 12px 26px rgba(20,92,44,.4);border:3px solid #fff2dd;text-align:center;padding:10px}
+    .sticker small{font-family:var(--font-body);font-size:.62rem;letter-spacing:.08em;font-weight:800}
+    .hero-card{position:static;display:inline-block;margin:14px 0 0 2px;background:var(--card);border:1px solid var(--line);box-shadow:var(--shadow-sm);border-radius:14px;padding:12px 16px;font-size:.88rem;font-weight:700}
+    .hero-card span{color:var(--green-text)}
+
+    .trustbar{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--card);padding:16px 0}
+    .trustbar .wrap{display:flex;gap:10px 28px;flex-wrap:wrap;justify-content:center;font-weight:800;font-size:.88rem;letter-spacing:.04em;text-transform:uppercase;color:var(--muted)}
+    .trustbar b{color:inherit}
+
+    /* Flavors */
+    .section-head{max-width:42rem;margin-bottom:36px}
+    .flavor-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+    .flavor{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:24px 20px;box-shadow:var(--shadow-sm)}
+    .flavor .dot{width:38px;height:38px;border-radius:50%;display:grid;place-items:center;font-size:1.25rem;margin-bottom:14px;background:var(--paper-2)}
+    .flavor h3{font-size:1.25rem;margin-bottom:6px}.flavor p{font-size:.92rem;color:var(--muted);margin:0}
+    .pill{display:inline-block;margin-top:14px;font-size:.68rem;font-weight:900;letter-spacing:.09em;color:#8a5606;background:#ffe9be;border-radius:999px;padding:5px 11px}
+    @media(prefers-color-scheme:dark){.pill{color:#ffd98c;background:#3a3018}}
+    .sizes{margin-top:22px;background:var(--paper-2);border:1px dashed var(--gold);border-radius:16px;padding:18px 22px;display:flex;gap:16px;flex-wrap:wrap;align-items:center;justify-content:space-between}
+    .sizes strong{font-family:var(--font-display)}
+
+    /* Shop — visible storefront, sales under remodeling */
+    .shop-banner{display:flex;gap:14px;align-items:flex-start;background:#fff7df;border:1.5px dashed var(--gold);border-radius:16px;padding:16px 20px;margin-bottom:28px}
+    @media(prefers-color-scheme:dark){.shop-banner{background:#2b2110}}
+    .shop-banner .ic{font-size:1.5rem;line-height:1.2}
+    .shop-banner strong{font-family:var(--font-display);display:block;font-size:1.05rem}
+    .shop-banner p{margin:2px 0 0;color:var(--muted);font-size:.94rem}
+    .shop-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+    .product{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:24px 20px;box-shadow:var(--shadow-sm);display:flex;flex-direction:column}
+    .product .dot{width:38px;height:38px;border-radius:50%;display:grid;place-items:center;font-size:1.25rem;margin-bottom:14px;background:var(--paper-2)}
+    .product h3{font-size:1.25rem;margin-bottom:6px}.product p{font-size:.92rem;color:var(--muted);margin:0 0 16px}
+    .size-row{display:flex;gap:8px;margin-top:auto;margin-bottom:14px}
+    .size-opt{flex:1;border:2px solid var(--line);background:var(--paper);color:var(--ink);border-radius:999px;padding:8px 0;font:700 .88rem var(--font-body);cursor:pointer}
+    .size-opt[aria-pressed="true"]{border-color:var(--green-btn);background:#e6f4e9;color:var(--green-text)}
+    @media(prefers-color-scheme:dark){.size-opt[aria-pressed="true"]{background:#1e3d27}}
+    .add-btn{width:100%;background:var(--orange);color:#fff;border:none;border-radius:999px;padding:12px 16px;font:700 .95rem var(--font-body);cursor:pointer;transition:background .15s,transform .15s}
+    .add-btn:hover{background:var(--orange-deep);transform:translateY(-1px)}
+
+    /* Cart drawer — under remodeling */
+    .overlay{position:fixed;inset:0;background:rgba(24,20,10,.5);z-index:70;opacity:0;pointer-events:none;transition:opacity .2s}
+    .overlay.show{opacity:1;pointer-events:auto}
+    .drawer{position:fixed;top:0;right:0;bottom:0;width:min(420px,94vw);z-index:80;background:var(--paper);border-left:1px solid var(--line);box-shadow:-12px 0 40px rgba(0,0,0,.18);transform:translateX(105%);visibility:hidden;transition:transform .28s,visibility 0s .28s;display:flex;flex-direction:column}
+    .drawer.open{transform:translateX(0);visibility:visible;transition:transform .28s,visibility 0s}
+    .drawer-head{display:flex;align-items:center;justify-content:space-between;padding:18px 22px;border-bottom:1px solid var(--line)}
+    .drawer-head h3{margin:0;font-size:1.3rem}
+    .drawer-close{background:none;border:1px solid var(--line);border-radius:10px;width:38px;height:38px;cursor:pointer;color:var(--ink);font-size:1.15rem}
+    .drawer-close:hover{border-color:var(--orange);color:var(--orange)}
+    .drawer-body{flex:1;overflow-y:auto;padding:22px}
+    .remodel-box{background:#fff7df;border:1.5px dashed var(--gold);border-radius:18px;padding:26px 22px;text-align:center}
+    @media(prefers-color-scheme:dark){.remodel-box{background:#2b2110}}
+    .remodel-box .ic{font-size:2.4rem;line-height:1}
+    .remodel-box h3{font-size:1.35rem;margin:12px 0 8px}
+    .remodel-box p{color:var(--muted);font-size:.95rem;margin:0}
+    .cart-attempt{margin-top:16px;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 16px;font-size:.94rem;display:none}
+    .cart-attempt.show{display:block}
+    .cart-attempt strong{font-family:var(--font-display)}
+    .drawer-foot{padding:18px 22px 22px;border-top:1px solid var(--line);background:var(--card);display:grid;gap:10px}
+    .checkout-btn{width:100%;background:var(--paper-2);color:var(--muted);border:2px dashed var(--line);border-radius:999px;padding:13px 16px;font:700 .95rem var(--font-body);cursor:pointer}
+
+    /* Steps */
+    .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .step{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:28px 24px}
+    .step-num{font-family:var(--font-display);font-size:2.2rem;font-weight:800;color:var(--gold);line-height:1}
+    .step h3{margin-top:12px;font-size:1.3rem}.step p{color:var(--muted);font-size:.96rem;margin:0}
+
+    .banner-card{background:var(--card);border:1px solid var(--line);border-radius:24px;overflow:hidden;box-shadow:var(--shadow)}
+    .banner-card img{display:block;width:100%;height:auto}
+    .banner-caption{padding:20px 28px 24px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;align-items:baseline}
+    .banner-caption h3{font-size:1.5rem;margin:0}.banner-caption p{margin:0;color:var(--muted)}
+
+    /* Compare */
+    .compare-card{background:var(--card);border:1px solid var(--line);border-radius:24px;overflow:hidden;box-shadow:var(--shadow)}
+    .compare-card>img{display:block;width:100%;height:auto}
+    .compare-grid{display:grid;grid-template-columns:1fr 1fr}
+    .compare-col{padding:32px 36px 36px}.compare-col.bad{border-right:1px solid var(--line)}
+    .compare-col h3{font-size:1.35rem}.compare-col.bad h3{color:#b03a2e}.compare-col.good h3{color:var(--green-text)}
+    .compare-col ul{margin:12px 0 0;padding-left:20px}.compare-col li{margin-bottom:5px}
+    .compare-tagline{text-align:center;font-family:var(--font-display);font-weight:800;font-size:clamp(1.3rem,3vw,1.7rem);color:var(--orange-deep);padding:8px 24px 36px;margin:0}
+    @media(prefers-color-scheme:dark){.compare-col.bad h3{color:#ff9a8a}}
+
+    /* Story */
+    .about-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:52px;align-items:start}
+    .about-img img{display:block;width:100%;height:auto;border-radius:24px;box-shadow:var(--shadow)}
+    .founder{margin-top:18px;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px 20px}
+    .founder strong{font-family:var(--font-display);font-size:1.05rem}.founder p{margin:4px 0 0;color:var(--muted);font-size:.92rem}
+    .story p{font-size:1.04rem;line-height:1.75}
+    .story-ending{font-family:var(--font-display);font-weight:800;font-size:1.6rem;color:var(--orange-deep);text-align:center;margin-top:28px}
+
+    /* FAQ */
+    .faq{max-width:820px}
+    details{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:0 22px;margin-bottom:12px}
+    summary{cursor:pointer;font-family:var(--font-display);font-weight:700;font-size:1.08rem;padding:20px 0;list-style:none}
+    details p{color:var(--muted);padding-bottom:20px;margin:0}
+
+    /* Launch / Contact */
+    .launch{background:var(--green);color:#eef6ec;border-radius:28px;padding:56px;display:grid;grid-template-columns:1.15fr .85fr;gap:44px;position:relative;overflow:hidden}
+    .launch::after{content:"";position:absolute;right:-90px;top:-90px;width:320px;height:320px;border-radius:50%;background:rgba(245,184,31,.22)}
+    .launch h2{color:#fff}.launch .lead{color:#d5e5d0}
+    .launch-list{list-style:none;padding:0;margin:20px 0 0;display:grid;gap:10px;position:relative;z-index:1}
+    .launch-list li{display:flex;gap:10px;font-weight:600}.launch-list li::before{content:"✓";color:var(--gold);font-weight:900}
+    .launch-form{position:relative;z-index:1;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.22);border-radius:20px;padding:26px}
+    .launch-form label{display:block;font-size:.85rem;font-weight:800;margin:12px 0 5px}
+    .launch-form input,.launch-form textarea{width:100%;border:1.5px solid rgba(255,255,255,.3);border-radius:11px;padding:12px 14px;font:400 .96rem var(--font-body);background:#fff;color:#1e2418}
+    .launch-form .btn{width:100%;margin-top:16px}
+    .contact-line{margin-top:28px;font-size:.95rem;color:#d5e5d0}.contact-line a{color:#fff;font-weight:800}
+
+    footer{border-top:1px solid var(--line);padding:44px 0 64px}
+    .footer-grid{display:flex;gap:24px;flex-wrap:wrap;align-items:flex-start}
+    .footer-meta{margin-left:auto;text-align:right;color:var(--muted);font-size:.92rem}.footer-meta a{color:inherit}
+    .footer-links{display:flex;gap:18px;flex-wrap:wrap;margin-top:8px}.footer-links a{color:var(--muted);text-decoration:none;font-weight:600;font-size:.92rem}
+
+    .chat-fab{overflow:hidden;padding:0;position:fixed;right:20px;bottom:88px;z-index:65;width:86px;height:86px;border:3px solid #fff;border-radius:50%;border:none;cursor:pointer;background:var(--orange);color:#fff;display:flex;align-items:center;justify-content:center;box-shadow:0 12px 28px rgba(200,79,10,.45)}
+    .chat-panel{position:fixed;right:22px;bottom:188px;z-index:75;width:min(92vw,360px);background:var(--card);border:1px solid var(--line);border-radius:20px;box-shadow:var(--shadow);overflow:hidden;transform:translateY(16px) scale(.98);opacity:0;pointer-events:none;visibility:hidden;transition:.2s;display:flex;flex-direction:column;max-height:min(70vh,calc(100dvh - 190px))}
+    .chat-panel.open{transform:none;opacity:1;pointer-events:auto;visibility:visible}
+    .chat-head{background:var(--green-btn);color:#fff;padding:16px 20px;display:flex;align-items:center;gap:12px}.chat-head h3{margin:0;font-size:1.15rem}
+    .chat-head .sub{font-size:.83rem;opacity:.9}.icon-btn{margin-left:auto;background:none;border:1px solid rgba(255,255,255,.35);border-radius:10px;width:38px;height:38px;cursor:pointer;color:#fff;font-size:1.1rem}
+    .chat-body{padding:18px 20px;overflow-y:auto}.chat-body label{display:block;font-size:.85rem;font-weight:700;margin:0 0 4px}
+    .chat-body input,.chat-body textarea{width:100%;border:1.5px solid var(--line);border-radius:10px;padding:10px 12px;font:400 .95rem var(--font-body);background:var(--paper);color:var(--ink);margin-bottom:14px}
+    .chat-body .field-error{border-color:#c0392b!important}
+    .toast{position:fixed;left:50%;bottom:28px;transform:translateX(-50%) translateY(20px);background:var(--ink);color:var(--paper);padding:12px 22px;border-radius:999px;font-weight:600;font-size:.92rem;z-index:100;opacity:0;pointer-events:none;transition:.25s;max-width:90vw;text-align:center}
+    .toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+    .reveal{transition:opacity .55s ease,transform .55s ease}.reveal.in{opacity:1;transform:none}
+    .concept-note{font-size:.78rem;color:var(--muted);text-align:center;margin-top:16px}
+
+    @media(max-width:960px){.flavor-grid,.shop-grid{grid-template-columns:repeat(2,1fr)}.steps{grid-template-columns:1fr}.hero-grid,.about-grid,.compare-grid,.launch{grid-template-columns:1fr}.compare-col.bad{border-right:none;border-bottom:1px solid var(--line)}.launch{padding:38px 28px}.footer-meta{margin-left:0;text-align:left}}
+    @media(max-width:760px){.nav{display:none}.menu-btn{display:inline-flex;margin-left:8px}section{padding:52px 0}.hero{padding:44px 0 64px}.flavor-grid{grid-template-columns:1fr 1fr}.proof{grid-template-columns:1fr}.sticker{width:96px;height:96px;font-size:.88rem}.cart-btn .cart-tag{display:none}.cart-btn{padding:10px 13px}}
+    @media(max-width:420px){.flavor-grid,.shop-grid{grid-template-columns:1fr}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition:none!important;animation:none!important}.reveal{opacity:1;transform:none}}
+      .tx-flag{height:17px;width:auto;border-radius:2px;vertical-align:-3px;margin-right:7px;box-shadow:0 0 0 1px rgba(90,62,10,.18)}
+      .ig-ic,.mail-ic{width:1.05em;height:1.05em;vertical-align:-0.18em;margin-right:6px;flex-shrink:0}
+      .faq-log{padding:16px;overflow-y:auto;flex:1;min-height:0;display:flex;flex-direction:column;gap:10px}
+    .bubble{max-width:88%;padding:11px 14px;font-size:.92rem;line-height:1.45;border-radius:16px}
+    .bubble-a{align-self:flex-start;background:var(--paper-2);border:1px solid var(--line);color:var(--ink);border-bottom-left-radius:4px}
+    .bubble-q{align-self:flex-end;background:var(--orange);color:#fff;font-weight:600;border-bottom-right-radius:4px}
+    .faq-chips{display:flex;flex-wrap:nowrap;gap:8px;padding:12px 16px;border-top:1px solid var(--line);overflow-x:auto;-webkit-overflow-scrolling:touch}
+    .faq-chip{border:1.5px solid var(--line);background:var(--card);color:var(--ink);border-radius:999px;padding:8px 13px;font:600 .85rem var(--font-body);cursor:pointer;transition:border-color .15s,color .15s}
+    .faq-chip:hover{border-color:var(--orange);color:var(--green-text)}
+    .chat-foot{display:flex;gap:18px;justify-content:center;flex-wrap:wrap;padding:11px 16px;border-top:1px solid var(--line);background:var(--paper-2)}
+    .chat-foot a{color:var(--green-text);font-weight:700;text-decoration:none;font-size:.9rem}
+      .chat-hello{display:flex;gap:10px;align-items:flex-start;margin-bottom:10px}
+    .chat-avatar{width:94px;height:94px;object-fit:cover;border-radius:16px;border:1px solid var(--line);flex-shrink:0}
+    .chat-hello .bubble{flex:1;min-width:0;overflow-wrap:break-word}
+      .chat-fab-img{width:100%;height:100%;object-fit:cover;display:block}
+  .founder-photo{width:100%;height:auto;border-radius:18px;border:1px solid var(--line)}
+.chat-hello{padding:14px 16px 4px;flex:none}
+.faq-chips>*{flex:none}
+.product-media{border-radius:16px;overflow:hidden;background:#DCD0BC;margin-bottom:14px}.product-media img{width:100%;height:250px;object-fit:contain;display:block}.flavor .product-media img{height:210px}
+
+
+    /* Fruit pages */
+    a.product-media{display:block;cursor:pointer}
+    .discover{display:inline-block;margin-top:12px;margin-left:10px;font-size:.85rem;font-weight:800;color:#c2510f;text-decoration:none}
+    .discover:hover{text-decoration:underline}
+    .fruit-hero{display:grid;grid-template-columns:minmax(260px,380px) 1fr;gap:38px;align-items:center;padding:44px 0 10px}
+    .fruit-hero .pouch-frame{background:#DCD0BC;border-radius:22px;padding:18px}
+    .fruit-hero .pouch-frame img{width:100%;height:auto;display:block;border-radius:12px}
+    .fruit-hero h1{font-family:var(--font-display);font-size:clamp(2rem,4.5vw,3rem);line-height:1.05;margin:0 0 10px}
+    .fruit-hero .tag{font-size:1.08rem;color:var(--muted);margin:0 0 18px}
+    .one-ing{display:inline-block;background:#ffe9be;color:#8a5606;font-weight:900;font-size:.78rem;letter-spacing:.07em;border-radius:999px;padding:6px 13px;margin-bottom:18px}
+    .fruit-buy{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin:8px 0 14px}
+    .back-link{display:inline-block;margin-top:26px;font-weight:800;color:#c2510f;text-decoration:none}
+    .back-link:hover{text-decoration:underline}
+    .fruit-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin:30px 0 8px}
+    .fcard{background:var(--paper-2);border:1px solid rgba(120,90,20,.16);border-radius:18px;padding:24px 26px}
+    .fcard h3{font-family:var(--font-display);margin:0 0 10px;font-size:1.22rem}
+    .fcard p{margin:0;color:var(--ink);line-height:1.62}
+    .fcard ul{margin:0;padding-left:19px;line-height:1.75}
+    .tea-box{margin-top:14px;background:#fff7df;border:1.5px dashed var(--gold);border-radius:14px;padding:13px 16px;font-size:.96rem;line-height:1.55}
+    .pairs{margin:26px 0 6px;display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+    .pairs a{background:#fff;border:1.5px solid var(--gold);color:#8a5606;font-weight:800;border-radius:999px;padding:8px 16px;text-decoration:none}
+    .pairs a:hover{background:#ffe9be}
+    @media(max-width:820px){.fruit-hero{grid-template-columns:1fr}.fruit-grid{grid-template-columns:1fr}}
+
+    .swap-cols{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:14px}
+    .swap-col{border-radius:14px;padding:15px 17px}
+    .swap-col h4{margin:0 0 8px;font-size:.82rem;letter-spacing:.08em}
+    .swap-col ul{margin:0;padding-left:18px;line-height:1.7;font-size:.95rem}
+    .swap-old{background:#f2e4de;color:#6d4a3d}
+    .swap-new{background:#e9f2df;color:#33511f}
+    @media(max-width:640px){.swap-cols{grid-template-columns:1fr}}
+  </style>
+</head>
+<body id="top">
+<header class="site-header">
+    <div class="wrap">
+      <a href="index.html" class="logo-badge" aria-label="Drypical home"><img src="assets/logo.jpg" alt="Drypical logo with strawberry, pineapple and orange — Real Fruit, Real Flavor" /></a>
+      <div><span class="domain">DRYPICAL.COM</span></div>
+      <nav class="nav" aria-label="Main">
+        <a href="index.html#shop">Shop</a><a href="index.html#flavors">Flavors</a><a href="index.html#inside">What&rsquo;s inside</a><a href="index.html#how">How we make it</a><a href="index.html#about">Our story</a><a href="index.html#faq">FAQ</a>
+        <a class="nav-cta" href="index.html#launch">Join the launch</a>
+      </nav>
+      <button class="cart-btn" id="cartBtn" type="button" aria-haspopup="dialog" aria-expanded="false" aria-controls="cartDrawer">
+        <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+        <span>Cart</span><span class="cart-tag">Under remodeling</span>
+      </button>
+      <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button>
+    </div>
+    <nav class="mobile-menu" id="mobileMenu" aria-label="Mobile">
+      <a href="index.html#shop">Shop</a><a href="index.html#flavors">Flavors</a><a href="index.html#inside">What&rsquo;s inside</a><a href="index.html#how">How we make it</a><a href="index.html#about">Our story</a><a href="index.html#faq">FAQ</a><a href="index.html#launch">Join the launch</a>
+      <a href="index.html#shop" id="mobileCartLink">🛒 Cart — under remodeling</a>
+    </nav>
+  </header>
+
+<main>
+  <section class="wrap fruit-hero">
+    <div class="pouch-frame reveal"><img src="assets/pouch-apple.webp" alt="Drypical Dried Apple pouch" /></div>
+    <div class="reveal">
+      <span class="one-ing">ONE INGREDIENT: APPLE</span>
+      <h1>Dried Apple</h1>
+      <p class="tag">Light, sweet rings — simple and satisfying.</p>
+      <div class="fruit-buy">
+        <div class="size-row" role="group" aria-label="Apple size"><button type="button" class="size-opt" aria-pressed="true">40 g</button><button type="button" class="size-opt" aria-pressed="false">200 g</button></div>
+        <button type="button" class="add-btn" data-flavor="Apple">Add to cart</button>
+      </div>
+      <p style="color:var(--muted);margin:0">No added sugar • No preservatives • No artificial colors — just the fruit, dried slowly in Princeton, Texas.</p>
+      <a class="back-link" href="index.html#flavors">&larr; Back to all seven flavors</a>
+    </div>
+  </section>
+  <section class="wrap">
+    <div class="fruit-grid">
+      <div class="fcard reveal"><h3>🌍 Origin &amp; history</h3><p>Every apple on Earth descends from the wild forests of the Tian Shan mountains of Kazakhstan — the city of Almaty literally means &ldquo;father of apples&rdquo;. Seeds traveled the Silk Road to Europe, and in America, Johnny Appleseed&rsquo;s orchards turned the apple into a national symbol of home and harvest.</p></div>
+      <div class="fcard reveal"><h3>🔎 How we select it</h3><p>We choose crisp, sweet-tart apples that snap when you bite them. The skin stays on — that is where much of the fiber, color and flavor lives.</p></div>
+      <div class="fcard reveal"><h3>🔥 How we dry &amp; pack it</h3><p>Cored and sliced into 5&nbsp;mm rings and slices, the apples are dried at about 135&nbsp;&deg;F for 8&ndash;12 hours into light, sweet, softly chewy pieces. One ingredient, nothing else. Sealed into 40&nbsp;g and 200&nbsp;g pouches.</p></div>
+      <div class="fcard reveal"><h3>💪 Goodness inside</h3><p>Apples are a natural source of pectin — the gut-friendly fiber — plus vitamin C and quercetin. An apple a day, now in a pouch that keeps.</p></div>
+      <div class="fcard reveal" style="grid-column:1/-1"><h3>🍽️ Ways to enjoy it</h3><ul><li>Straight from the pouch</li><li>In lunchboxes and on road trips</li><li>On charcuterie boards with good cheese</li><li>Over oatmeal, or baked into crisps and pies</li></ul><div class="tea-box" style="background:#eef4e6;border-color:#9db87c">🥣 <strong>With yogurt:</strong> crumble apple chips over yogurt with cinnamon and oats &mdash; an apple-pie parfait you can eat any day of the week.</div><div class="tea-box">🍵 <strong>Apple-cinnamon tea:</strong> steep a few slices in hot water with a cinnamon stick — the classic cozy cup. Add a dried orange wheel and it tastes like an orchard holiday.</div></div>
+    </div>
+    <div class="fcard reveal" style="grid-column:1/-1"><h3>🔁 Make the swap</h3><p>Let&rsquo;s be honest about the usual snack drawer: chips, candy and cookies loaded with added sugar, artificial colors, preservatives and oils your body never asked for &mdash; a quick hit, then the crash. This pouch is the swap: one ingredient, real fruit, naturally sweet, with the fiber that actually keeps you full. Same grab-and-go habit &mdash; nothing harmful in the bag. Trade the old snack for the real one.</p><div class="swap-cols"><div class="swap-col swap-old"><h4>THE OLD SNACK</h4><ul><li>Added sugars &amp; syrups</li><li>Artificial colors &amp; flavors</li><li>Preservatives &amp; seed oils</li><li>Empty calories, quick crash</li></ul></div><div class="swap-col swap-new"><h4>THE DRYPICAL SWAP</h4><ul><li>One ingredient: the fruit itself</li><li>Naturally sweet &mdash; nothing added</li><li>Real fiber that fills you up</li><li>Steady energy, no crash</li></ul></div></div></div>
+    <div class="pairs reveal"><strong>Pairs well with:</strong> <a href="fruit-orange.html">Dried Orange</a><a href="fruit-banana.html">Dried Banana</a></div>
+    <p style="margin:22px 0 54px;color:var(--muted)">For stores &amp; wholesale, or any question about this fruit: <a href="mailto:Info@Drypical.com" style="color:#c2510f;font-weight:800">Info@Drypical.com</a> &nbsp;•&nbsp; <a href="index.html#shop" style="color:#c2510f;font-weight:800">Visit the shop</a></p>
+  </section>
+</main>
+<footer id="contact">
+    <div class="wrap footer-grid">
+      <span class="logo-badge"><img src="assets/logo.jpg" alt="Drypical logo — Real Fruit, Real Flavor" style="width:56px;height:56px" /></span>
+      <div>
+        
+        <div style="font-size:.9rem;color:var(--muted)">Real Fruit • Real Flavor — Drypical.com</div>
+        <div class="footer-links"><a href="index.html#shop">Shop</a><a href="index.html#flavors">Flavors</a><a href="index.html#inside">What&rsquo;s inside</a><a href="index.html#about">Our story</a><a href="index.html#faq">FAQ</a><a href="https://www.instagram.com/drypical_tx/" target="_blank" rel="noopener"><svg class="ig-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="2.5" width="19" height="19" rx="5.5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.6" r="1.15" fill="currentColor" stroke="none"/></svg>Instagram @drypical_tx</a></div>
+      </div>
+      <div class="footer-meta">
+        <div><a href="mailto:Info@Drypical.com"><svg class="mail-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="5" width="19" height="14" rx="2.5"/><path d="M3.5 7l8.5 6 8.5-6"/></svg>Info@Drypical.com</a></div>
+        <div>© <span id="year">2026</span> Drypical LLC — Princeton, Texas</div>
+      </div>
+    </div>
+  </footer>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<div class="overlay" id="cartOverlay"></div>
+  <aside class="drawer" id="cartDrawer" role="dialog" aria-modal="true" aria-label="Shopping cart — under remodeling">
+    <div class="drawer-head"><h3>Your cart</h3><button class="drawer-close" id="cartClose" type="button" aria-label="Close cart">&times;</button></div>
+    <div class="drawer-body">
+      <div class="remodel-box">
+        <div class="ic" aria-hidden="true">🚧</div>
+        <h3>Our shop is under remodeling — online sales coming soon</h3>
+        <p>We&rsquo;re finishing our licensing, official packaging and the store itself, so checkout isn&rsquo;t open yet and no payment can be taken here. When the first batch launches, this cart is where you&rsquo;ll order.</p>
+      </div>
+      <div class="cart-attempt" id="cartAttempt" role="status"></div>
+      <p style="margin-top:18px;color:var(--muted);font-size:.95rem">Want that flavor the day sales open? Join the launch list and we&rsquo;ll email you first — before anyone else.</p>
+    </div>
+    <div class="drawer-foot">
+      <a class="btn btn-orange" href="index.html#launch" id="cartJoinList" style="width:100%">Join the launch list</a>
+    </div>
+  </aside>
+<button class="chat-fab" id="chatFab" aria-label="Chat with J — questions" aria-expanded="false"><video class="chat-fab-img" autoplay muted loop playsinline poster="assets/pinita-face.jpg" aria-label="J — Piñita, the Drypical helper"><source src="assets/pinita-video.webm" type="video/webm" /><source src="assets/pinita-video.mp4" type="video/mp4" /></video></button>
+<div class="chat-panel" id="chatPanel" role="dialog" aria-label="Drypical — quick answers">
+    <div class="chat-head"><div><h3>Drypical — quick answers</h3></div><button class="icon-btn" id="chatClose" aria-label="Close chat">&times;</button></div>
+      <div class="chat-hello"><video class="chat-avatar" autoplay muted loop playsinline poster="assets/pinita.jpg" aria-label="Piñita, the Drypical pineapple buddy"><source src="assets/pinita-video.webm" type="video/webm" /><source src="assets/pinita-video.mp4" type="video/mp4" /></video><div class="bubble bubble-a">&iexcl;Hola! I am J, the Drypical helper. Pick a question and I will answer right here &mdash; for anything else, a human reads every email.</div></div>
+    <div class="faq-log" id="faqLog">
+      
+    </div>
+    <div class="faq-chips" id="faqChips"></div>
+    <div class="chat-foot">
+      <a href="mailto:Info@Drypical.com">✉️ Email us</a>
+      <a href="https://www.instagram.com/drypical_tx/" target="_blank" rel="noopener">Instagram @drypical_tx</a>
+    </div>
+  </div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script>
+    var EMAIL="Info@Drypical.com";
+    var toastEl=document.getElementById("toast"),toastTimer=null;
+    function toast(m){toastEl.textContent=m;toastEl.classList.add("show");clearTimeout(toastTimer);toastTimer=setTimeout(function(){toastEl.classList.remove("show")},2600)}
+    function goMailto(h){var a=document.createElement("a");a.href=h;a.style.display="none";document.body.appendChild(a);a.click();setTimeout(function(){if(a.parentNode)a.parentNode.removeChild(a)},600)}
+    var menuBtn=document.getElementById("menuBtn"),mobileMenu=document.getElementById("mobileMenu");
+    function toggleMenu(f){var o=typeof f==="boolean"?f:!mobileMenu.classList.contains("open");mobileMenu.classList.toggle("open",o);menuBtn.setAttribute("aria-expanded",String(o))}
+    menuBtn.addEventListener("click",function(){toggleMenu()});
+    mobileMenu.querySelectorAll("a").forEach(function(a){a.addEventListener("click",function(){toggleMenu(false)})});
+    var chatFab=document.getElementById("chatFab"),chatPanel=document.getElementById("chatPanel");
+    function openChat(){chatPanel.classList.add("open");chatFab.setAttribute("aria-expanded","true");document.getElementById("chatClose").focus()}
+    function closeChat(){chatPanel.classList.remove("open");chatFab.setAttribute("aria-expanded","false")}
+    chatFab.addEventListener("click",function(){chatPanel.classList.contains("open")?closeChat():openChat()});
+    document.getElementById("chatClose").addEventListener("click",closeChat);
+    document.addEventListener("keydown",function(e){if(e.key==="Escape"){if(chatPanel.classList.contains("open"))closeChat();if(mobileMenu.classList.contains("open"))toggleMenu(false);if(cartDrawer.classList.contains("open"))closeCart()}});
+    /* FAQ chat — quick answers, no account, no tracking */
+    var FAQ=[["When do online sales open?","We are finishing our licensing and official packaging right now. Join the launch list on this page and you will get an email the day sales open — before anyone else."],["What flavors do you have?","Seven flavors: Pineapple, Mango, Strawberry, Orange, Banana, Apple and Tropical Mix. Every pouch is just the fruit — nothing else."],["What sizes are the pouches?","Two sizes: 40 g grab-and-go pouches and 200 g share bags. A premium Cocktail Garnish line is also in the works."],["What are the ingredients?","One ingredient: the fruit itself. No added sugar, no preservatives, no artificial colors — and nothing you cannot pronounce."],["Do you sell wholesale or to stores?","Yes — wholesale and local store interest is welcome now. Email Info@Drypical.com with your store name and what you are interested in."],["Where is Drypical made?","In Princeton, Texas, in small batches by our founder. Real fruit, real flavor — and made in Texas."],["How can I talk to a person?","Email us at Info@Drypical.com or message us on Instagram @drypical_tx — a person (the founder) answers everything."]];
+    var faqLog=document.getElementById("faqLog"),faqChips=document.getElementById("faqChips");
+    FAQ.forEach(function(pair){
+      var chip=document.createElement("button");chip.type="button";chip.className="faq-chip";chip.textContent=pair[0];
+      chip.addEventListener("click",function(){
+        var q=document.createElement("div");q.className="bubble bubble-q";q.textContent=pair[0];faqLog.appendChild(q);
+        var a=document.createElement("div");a.className="bubble bubble-a";a.textContent=pair[1];faqLog.appendChild(a);
+        faqLog.scrollTo({top:faqLog.scrollHeight,behavior:"smooth"});
+      });
+      faqChips.appendChild(chip);
+    });
+    /* Cart — under remodeling: opens the notice drawer, never a checkout */
+    var cartBtn=document.getElementById("cartBtn"),cartDrawer=document.getElementById("cartDrawer"),cartOverlay=document.getElementById("cartOverlay"),cartAttempt=document.getElementById("cartAttempt");
+    function openCart(flavor,size){
+      if(flavor){
+        cartAttempt.innerHTML="You picked <strong>"+flavor+" — "+size+"</strong>.<br><span style='color:var(--muted)'>Great choice — it just can&rsquo;t be checked out yet while the shop is under remodeling. Join the launch list and it&rsquo;s yours the day we open.</span>";
+        cartAttempt.classList.add("show");
+      }
+      cartDrawer.classList.add("open");cartOverlay.classList.add("show");cartBtn.setAttribute("aria-expanded","true");
+      document.getElementById("cartClose").focus();
+    }
+    function closeCart(){cartDrawer.classList.remove("open");cartOverlay.classList.remove("show");cartBtn.setAttribute("aria-expanded","false")}
+    cartBtn.addEventListener("click",function(){openCart()});
+    document.getElementById("cartClose").addEventListener("click",closeCart);
+    cartOverlay.addEventListener("click",closeCart);
+    document.getElementById("cartJoinList").addEventListener("click",closeCart);
+    var mobileCart=document.getElementById("mobileCartLink");
+    if(mobileCart){mobileCart.addEventListener("click",function(e){e.preventDefault();toggleMenu(false);openCart()})}
+    document.querySelectorAll(".product").forEach(function(card){
+      var opts=card.querySelectorAll(".size-opt");
+      opts.forEach(function(opt){opt.addEventListener("click",function(){opts.forEach(function(o){o.setAttribute("aria-pressed","false")});opt.setAttribute("aria-pressed","true")})});
+      var add=card.querySelector(".add-btn");
+      add.addEventListener("click",function(){
+        var sel=card.querySelector('.size-opt[aria-pressed="true"]');
+        openCart(add.getAttribute("data-flavor"),sel?sel.textContent.trim():"40 g");
+        toast("Our shop is under remodeling — online sales coming soon");
+      });
+    });
+
+    document.getElementById("launchForm").addEventListener("submit",function(e){
+      e.preventDefault();
+      var n=document.getElementById("launchName"),i=document.getElementById("launchInterest");
+      if(n.value.trim()===""){toast("Please add your name to join the list");n.focus();return}
+      var body="Name: "+n.value.trim()+"\nInterested in: "+(i.value.trim()||"First batch")+"\n\nPlease add me to the Drypical launch list.";
+      goMailto("mailto:"+EMAIL+"?subject="+encodeURIComponent("Launch list — "+n.value.trim())+"&body="+encodeURIComponent(body));
+      toast("Opening your email app to reserve your spot…");
+    });
+    document.getElementById("copyEmail").addEventListener("click",function(){
+      if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(EMAIL).then(function(){toast("Email copied: "+EMAIL)})}
+      else{var t=document.createElement("textarea");t.value=EMAIL;document.body.appendChild(t);t.select();try{document.execCommand("copy");toast("Email copied")}catch(e){toast(EMAIL)}document.body.removeChild(t)}
+    });
+    document.getElementById("year").textContent=String(new Date().getFullYear());
+    if("IntersectionObserver" in window && !window.matchMedia("(prefers-reduced-motion: reduce)").matches){
+      var io=new IntersectionObserver(function(es){es.forEach(function(en){if(en.isIntersecting){en.target.classList.add("in");io.unobserve(en.target)}})},{threshold:.08});
+      document.querySelectorAll(".reveal").forEach(function(el){io.observe(el)});
+    } else { document.querySelectorAll(".reveal").forEach(function(el){el.classList.add("in")}); }
+  </script>
+</body>
+</html>
+
+  <script>
+  (function(){
+    var y=document.getElementById("year"); if(y) y.textContent=String(new Date().getFullYear());
+    var menuBtn=document.getElementById("menuBtn"),mobileMenu=document.getElementById("mobileMenu");
+    if(menuBtn&&mobileMenu){menuBtn.addEventListener("click",function(){var o=!mobileMenu.classList.contains("open");mobileMenu.classList.toggle("open",o);menuBtn.setAttribute("aria-expanded",String(o))});}
+    var toastEl=document.getElementById("toast"),tt=null;
+    function toast(m){if(!toastEl)return;toastEl.textContent=m;toastEl.classList.add("show");clearTimeout(tt);tt=setTimeout(function(){toastEl.classList.remove("show")},2600)}
+    var cartBtn=document.getElementById("cartBtn"),cartDrawer=document.getElementById("cartDrawer"),cartOverlay=document.getElementById("cartOverlay"),cartAttempt=document.getElementById("cartAttempt");
+    function openCart(flavor,size){if(flavor&&cartAttempt){cartAttempt.innerHTML="You picked <strong>"+flavor+" \u2014 "+size+"</strong>.<br><span style='color:var(--muted)'>Great choice \u2014 it just can&rsquo;t be checked out yet while the shop is under remodeling. Join the launch list and it&rsquo;s yours the day we open.</span>";cartAttempt.classList.add("show")}if(cartDrawer){cartDrawer.classList.add("open");cartOverlay.classList.add("show")}}
+    function closeCart(){if(cartDrawer){cartDrawer.classList.remove("open");cartOverlay.classList.remove("show")}}
+    if(cartBtn)cartBtn.addEventListener("click",function(){openCart()});
+    var cc=document.getElementById("cartClose"); if(cc)cc.addEventListener("click",closeCart);
+    if(cartOverlay)cartOverlay.addEventListener("click",closeCart);
+    var jl=document.getElementById("cartJoinList"); if(jl)jl.addEventListener("click",closeCart);
+    var mc=document.getElementById("mobileCartLink"); if(mc)mc.addEventListener("click",function(e){e.preventDefault();if(mobileMenu)mobileMenu.classList.remove("open");openCart()});
+    var buy=document.querySelector(".fruit-buy");
+    if(buy){var opts=buy.querySelectorAll(".size-opt");opts.forEach(function(o){o.addEventListener("click",function(){opts.forEach(function(x){x.setAttribute("aria-pressed","false")});o.setAttribute("aria-pressed","true")})});
+      var add=buy.querySelector(".add-btn"); if(add)add.addEventListener("click",function(){var sel=buy.querySelector('.size-opt[aria-pressed="true"]');openCart(add.getAttribute("data-flavor"),sel?sel.textContent.trim():"40 g");toast("Our shop is under remodeling \u2014 online sales coming soon")});}
+    var chatFab=document.getElementById("chatFab"),chatPanel=document.getElementById("chatPanel");
+    function openChat(){chatPanel.classList.add("open");chatFab.setAttribute("aria-expanded","true")}
+    function closeChat(){chatPanel.classList.remove("open");chatFab.setAttribute("aria-expanded","false")}
+    if(chatFab&&chatPanel){chatFab.addEventListener("click",function(){chatPanel.classList.contains("open")?closeChat():openChat()});document.getElementById("chatClose").addEventListener("click",closeChat);
+      var FAQ=[["When do online sales open?","We are finishing our licensing and official packaging right now. Join the launch list on this page and you will get an email the day sales open \u2014 before anyone else."],["What flavors do you have?","Seven flavors: Pineapple, Mango, Strawberry, Orange, Banana, Apple and Tropical Mix. Every pouch is just the fruit \u2014 nothing else."],["What sizes are the pouches?","Two sizes: 40 g grab-and-go pouches and 200 g share bags. A premium Cocktail Garnish line is also in the works."],["What are the ingredients?","One ingredient: the fruit itself. No added sugar, no preservatives, no artificial colors \u2014 and nothing you cannot pronounce."],["Do you sell wholesale or to stores?","Yes \u2014 wholesale and local store interest is welcome now. Email Info@Drypical.com with your store name and what you are interested in."],["Where is Drypical made?","In Princeton, Texas, in small batches by our founder. Real fruit, real flavor \u2014 and made in Texas."],["How can I talk to a person?","Email us at Info@Drypical.com or message us on Instagram @drypical_tx \u2014 a person (the founder) answers everything."]];
+      var faqLog=document.getElementById("faqLog"),faqChips=document.getElementById("faqChips");
+      FAQ.forEach(function(pair){var chip=document.createElement("button");chip.type="button";chip.className="faq-chip";chip.textContent=pair[0];chip.addEventListener("click",function(){var q=document.createElement("div");q.className="bubble bubble-q";q.textContent=pair[0];faqLog.appendChild(q);var a=document.createElement("div");a.className="bubble bubble-a";a.textContent=pair[1];faqLog.appendChild(a);faqLog.scrollTo({top:faqLog.scrollHeight,behavior:"smooth"})});faqChips.appendChild(chip)});}
+    document.addEventListener("keydown",function(e){if(e.key==="Escape"){closeChat();closeCart()}});
+    if("IntersectionObserver" in window){var io=new IntersectionObserver(function(es){es.forEach(function(en){if(en.isIntersecting){en.target.classList.add("in");io.unobserve(en.target)}})},{threshold:.08});document.querySelectorAll(".reveal").forEach(function(el){io.observe(el)})}else{document.querySelectorAll(".reveal").forEach(function(el){el.classList.add("in")})}
+  })();
+  </script>
+
+</body>
+</html>

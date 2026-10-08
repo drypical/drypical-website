@@ -339,10 +339,10 @@
       <a class="btn btn-orange" href="index.html#launch" id="cartJoinList" style="width:100%">Join the launch list</a>
     </div>
   </aside>
-<button class="chat-fab" id="chatFab" aria-label="Chat with J — questions" aria-expanded="false"><video class="chat-fab-img" autoplay muted loop playsinline poster="assets/pinita-face.jpg" aria-label="J — Piñita, the Drypical helper"><source src="assets/pinita-video.webm" type="video/webm" /><source src="assets/pinita-video.mp4" type="video/mp4" /></video></button>
+<button class="chat-fab" id="chatFab" aria-label="Chat with J — questions" aria-expanded="false"><video class="chat-fab-img" autoplay muted loop playsinline preload="auto" poster="assets/pinita-face.jpg" aria-label="J — Piñita, the Drypical helper"><source src="assets/pinita-video.webm" type="video/webm" /><source src="assets/pinita-video.mp4" type="video/mp4" /></video></button>
 <div class="chat-panel" id="chatPanel" role="dialog" aria-label="Drypical — quick answers">
     <div class="chat-head"><div><h3>Drypical — quick answers</h3></div><button class="icon-btn" id="chatClose" aria-label="Close chat">&times;</button></div>
-      <div class="chat-hello"><video class="chat-avatar" autoplay muted loop playsinline poster="assets/pinita.jpg" aria-label="Piñita, the Drypical pineapple buddy"><source src="assets/pinita-video.webm" type="video/webm" /><source src="assets/pinita-video.mp4" type="video/mp4" /></video><div class="bubble bubble-a">&iexcl;Hola! I am J, the Drypical helper. Pick a question and I will answer right here &mdash; for anything else, a human reads every email.</div></div>
+      <div class="chat-hello"><video class="chat-avatar" autoplay muted loop playsinline preload="auto" poster="assets/pinita.jpg" aria-label="Piñita, the Drypical pineapple buddy"><source src="assets/pinita-video.webm" type="video/webm" /><source src="assets/pinita-video.mp4" type="video/mp4" /></video><div class="bubble bubble-a">&iexcl;Hola! I am J, the Drypical helper. Pick a question and I will answer right here &mdash; for anything else, a human reads every email.</div></div>
     <div class="faq-log" id="faqLog">
       
     </div>
@@ -460,5 +460,6 @@
   })();
   </script>
 
+<script>document.querySelectorAll("video.chat-fab-img,video.chat-avatar").forEach(function(v){function p(){if(v.paused){v.play().catch(function(){})}}p();document.addEventListener("touchstart",p,{once:true});document.addEventListener("click",p,{once:true});});</script>
 </body>
 </html>

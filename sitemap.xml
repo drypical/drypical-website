@@ -48,4 +48,8 @@
     <loc>https://www.drypical.com/terms.html</loc>
     <priority>0.6</priority>
   </url>
+  <url>
+    <loc>https://www.drypical.com/subscribe.html</loc>
+    <priority>0.7</priority>
+  </url>
 </urlset>

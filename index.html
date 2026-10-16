@@ -579,7 +579,7 @@ a.product-media{display:block;cursor:pointer}
     </div>
   </aside>
 
-  <button class="chat-fab" id="chatFab" aria-label="Chat with J — questions" aria-expanded="false"><video class="chat-fab-img" autoplay muted loop playsinline preload="auto" disablepictureinpicture poster="assets/pinita-face.jpg" aria-label="J — Piñita, the Drypical helper"><source src="assets/pinita-video.webm" type="video/webm" /><source src="assets/pinita-video.mp4" type="video/mp4" /></video></button>
+  <button class="chat-fab" id="chatFab" aria-label="Chat with J — questions" aria-expanded="false"><video class="chat-fab-img" autoplay muted loop playsinline preload="auto" disablepictureinpicture poster="assets/pinita-face.jpg" aria-label="Piñita, the Drypical helper"><source src="assets/pinita-video.webm" type="video/webm" /><source src="assets/pinita-video.mp4" type="video/mp4" /></video></button>
   <div class="chat-panel" id="chatPanel" role="dialog" aria-label="Drypical — quick answers">
     <div class="chat-head"><div><h3>Drypical — quick answers</h3></div><button class="icon-btn" id="chatClose" aria-label="Close chat">&times;</button></div>
       <div class="chat-hello"><video class="chat-avatar" autoplay muted loop playsinline preload="auto" disablepictureinpicture poster="assets/pinita.jpg" aria-label="Piñita, the Drypical pineapple buddy"><source src="assets/pinita-video.webm" type="video/webm" /><source src="assets/pinita-video.mp4" type="video/mp4" /></video><div class="bubble bubble-a">&iexcl;Hola! I am J, the Drypical helper. Pick a question and I will answer right here &mdash; for anything else, a human reads every email.</div></div>
@@ -697,16 +697,16 @@ a.product-media{display:block;cursor:pointer}
     <h2 id="dry-welcome-title">Welcome to Drypical! 🍍</h2>
     <p class="dry-welcome-sub"><strong>Our subscription is under construction — but registration is now OPEN.</strong></p>
     <p>You&rsquo;re joining the founding list of a real fruit company: <em>Real Fruit, Real Flavor</em> — no added sugar, no artificial colors, no preservatives. Just fruit.</p>
-    <p>Be first in line for the <strong>First Season</strong>: our variety box of small dried-fruit bags, with a <strong>collectible Pi&ntilde;ita surprise</strong> in every box.</p>
+    <p>Be among the first to know when the <strong>First Season</strong> opens: our variety box of small dried-fruit bags, with a <strong>collectible Pi&ntilde;ita surprise</strong> in every box.</p>
     <div><span class="dry-welcome-badges">NO ADDED SUGAR &middot; NO ARTIFICIAL COLORS &middot; NO PRESERVATIVES &middot; JUST FRUIT</span></div>
     <form id="dry-welcome-form" novalidate>
       <input type="text" id="dw-name" placeholder="Your name" autocomplete="name">
       <input type="email" id="dw-email" placeholder="Your email" autocomplete="email">
-      <input type="tel" id="dw-phone" placeholder="Your phone" autocomplete="tel">
+      <input type="tel" id="dw-phone" placeholder="Your phone (only for launch texts or WhatsApp)" autocomplete="tel">
       <button type="submit" id="dw-submit">Join the list</button>
       <p class="dry-welcome-msg" id="dw-msg"></p>
     </form>
-    <p class="dry-welcome-fine">We&rsquo;ll only contact you about the First Season launch. No spam, ever.</p>
+    <p class="dry-welcome-fine">We&rsquo;ll only contact you about the First Season launch and Drypical subscription news — a few messages a year, never spam. If you give us your phone, you agree we may also text or WhatsApp you that launch news. Unsubscribe anytime.</p>
   </div>
 </div>
 <script>
@@ -741,7 +741,7 @@ a.product-media{display:block;cursor:pointer}
         form.innerHTML = '<p class="dry-welcome-ok">🎉 You&rsquo;re on the list! Welcome to the founding season — we&rsquo;ll let you know the moment the First Season opens.</p>';
         try { localStorage.setItem(KEY, 'registered'); } catch(e){}
       } else if(r.status === 409){
-        msg.textContent = 'That email is already registered — you&rsquo;re on the list! 🎉'; msg.className = 'dry-welcome-msg ok';
+        msg.textContent = 'Thanks! If that email was already on the list, you’re all set — we’ll let you know when the First Season opens. 🎉'; msg.className = 'dry-welcome-msg ok';
         btn.disabled = false; btn.textContent = 'Join the list';
       } else {
         msg.textContent = 'Something went wrong. Please try again in a moment.'; msg.className = 'dry-welcome-msg err';

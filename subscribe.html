@@ -305,12 +305,12 @@
   <section class="wrap">
     <div class="eyebrow" style="margin-top:44px">DRYPICAL SUBSCRIPTIONS</div>
     <h1 style="font-size:clamp(2.2rem,5vw,3.4rem)">The First Season Club 🍍</h1>
-    <p class="lead">Our subscription is <strong>under construction</strong> — but registration is now <strong>OPEN</strong>. Join the founding list of a real fruit company and be first in line when the First Season opens: <em>Real Fruit, Real Flavor</em> — no added sugar, no artificial colors, no preservatives. Just fruit.</p>
+    <p class="lead">Our subscription is <strong>under construction</strong> — but registration is now <strong>OPEN</strong>. Join the founding list of a real fruit company and be among the first to know when the First Season opens: <em>Real Fruit, Real Flavor</em> — no added sugar, no artificial colors, no preservatives. Just fruit.</p>
     <div class="sub-badges"><span>NO ADDED SUGAR &middot; NO ARTIFICIAL COLORS &middot; NO PRESERVATIVES &middot; JUST FRUIT</span></div>
   </section>
   <section class="wrap">
     <h2>Inside every box 📦</h2>
-    <p class="lead">A variety box of <strong>12–13 small bags (40 g each)</strong> across our flavors — so you never get bored of just one — plus <strong>one collectible Pi&ntilde;ita surprise</strong> in every box.</p>
+    <p class="lead">The plan for every box: a variety box of <strong>12–13 small bags (40 g each)</strong> across our flavors — so you never get bored of just one — plus <strong>one collectible Pi&ntilde;ita surprise</strong> in every box.</p>
     <div class="flavor-grid">
       <figure><img src="assets/pouch-pineapple.webp" alt="Drypical dried pineapple pouch" /><figcaption>Pineapple</figcaption></figure>
       <figure><img src="assets/pouch-mango.webp" alt="Drypical dried mango pouch" /><figcaption>Mango</figcaption></figure>
@@ -320,6 +320,7 @@
       <figure><img src="assets/pouch-banana.webp" alt="Drypical dried banana pouch" /><figcaption>Banana</figcaption></figure>
       <figure><img src="assets/pouch-mix.webp" alt="Drypical Tropical Mix pouch" /><figcaption>Tropical Mix</figcaption></figure>
     </div>
+    <p class="concept-note">Concept pouches shown — official packaging in final development. Box contents are our launch plan: final contents, sizes and packaging may change before the First Season opens.</p>
   </section>
   <section class="wrap">
     <h2>Collect them all 🍍</h2>
@@ -335,11 +336,11 @@
       <form id="sub-form" novalidate>
         <input type="text" id="sub-name" placeholder="Your name" autocomplete="name" />
         <input type="email" id="sub-email" placeholder="Your email" autocomplete="email" />
-        <input type="tel" id="sub-phone" placeholder="Your phone" autocomplete="tel" />
+        <input type="tel" id="sub-phone" placeholder="Your phone (only for launch texts or WhatsApp)" autocomplete="tel" />
         <button type="submit" class="reg-btn" id="sub-submit">Join the list</button>
         <p class="reg-msg" id="sub-msg"></p>
       </form>
-      <p class="reg-fine">We&rsquo;ll only contact you about the First Season launch. No spam, ever.</p>
+      <p class="reg-fine">We&rsquo;ll only contact you about the First Season launch and Drypical subscription news — a few messages a year, never spam. If you give us your phone, you agree we may also text or WhatsApp you that launch news. Unsubscribe anytime.</p>
     </div>
     <p style="margin:26px 0 54px;text-align:center"><a class="back-link" href="index.html">&larr; Back to Drypical.com</a></p>
   </section>
@@ -375,7 +376,7 @@
       <a class="btn btn-orange" href="index.html#launch" id="cartJoinList" style="width:100%">Join the launch list</a>
     </div>
   </aside>
-<button class="chat-fab" id="chatFab" aria-label="Chat with J — questions" aria-expanded="false"><video class="chat-fab-img" autoplay muted loop playsinline preload="auto" disablepictureinpicture poster="assets/pinita-face.jpg" aria-label="J — Piñita, the Drypical helper"><source src="assets/pinita-video.webm" type="video/webm" /><source src="assets/pinita-video.mp4" type="video/mp4" /></video></button>
+<button class="chat-fab" id="chatFab" aria-label="Chat with J — questions" aria-expanded="false"><video class="chat-fab-img" autoplay muted loop playsinline preload="auto" disablepictureinpicture poster="assets/pinita-face.jpg" aria-label="Piñita, the Drypical helper"><source src="assets/pinita-video.webm" type="video/webm" /><source src="assets/pinita-video.mp4" type="video/mp4" /></video></button>
 <div class="chat-panel" id="chatPanel" role="dialog" aria-label="Drypical — quick answers">
     <div class="chat-head"><div><h3>Drypical — quick answers</h3></div><button class="icon-btn" id="chatClose" aria-label="Close chat">&times;</button></div>
       <div class="chat-hello"><video class="chat-avatar" autoplay muted loop playsinline preload="auto" disablepictureinpicture poster="assets/pinita.jpg" aria-label="Piñita, the Drypical pineapple buddy"><source src="assets/pinita-video.webm" type="video/webm" /><source src="assets/pinita-video.mp4" type="video/mp4" /></video><div class="bubble bubble-a">&iexcl;Hola! I am J, the Drypical helper. Pick a question and I will answer right here &mdash; for anything else, a human reads every email.</div></div>
@@ -388,7 +389,6 @@
       <a href="https://www.instagram.com/drypical_tx/" target="_blank" rel="noopener" aria-label="Drypical on Instagram"><svg class="ig-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="2.5" width="19" height="19" rx="5.5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.6" r="1.15" fill="currentColor" stroke="none"/></svg></a>
     </div>
   </div>
-  <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
   
 <script>
@@ -413,7 +413,7 @@
       if(r.status === 201){
         form.innerHTML = '<p class="reg-ok">🎉 You&rsquo;re on the list! Welcome to the founding season — we&rsquo;ll let you know the moment the First Season opens.</p>';
       } else if(r.status === 409){
-        msg.textContent = 'That email is already registered — you&rsquo;re on the list! 🎉'; msg.className = 'reg-msg ok';
+        msg.textContent = 'Thanks! If that email was already on the list, you’re all set — we’ll let you know when the First Season opens. 🎉'; msg.className = 'reg-msg ok';
         btn.disabled = false; btn.textContent = 'Join the list';
       } else {
         msg.textContent = 'Something went wrong. Please try again in a moment.'; msg.className = 'reg-msg err';
@@ -437,7 +437,7 @@
     var toastEl=document.getElementById("toast"),tt=null;
     function toast(m){if(!toastEl)return;toastEl.textContent=m;toastEl.classList.add("show");clearTimeout(tt);tt=setTimeout(function(){toastEl.classList.remove("show")},2600)}
     var cartBtn=document.getElementById("cartBtn"),cartDrawer=document.getElementById("cartDrawer"),cartOverlay=document.getElementById("cartOverlay"),cartAttempt=document.getElementById("cartAttempt");
-    function openCart(flavor,size){if(flavor&&cartAttempt){cartAttempt.innerHTML="You picked <strong>"+flavor+" \\u2014 "+size+"</strong>.<br><span style='color:var(--muted)'>Great choice \\u2014 it just can&rsquo;t be checked out yet while the shop is under remodeling. Join the launch list and it&rsquo;s yours the day we open.</span>";cartAttempt.classList.add("show")}if(cartDrawer){cartDrawer.classList.add("open");cartOverlay.classList.add("show")}}
+    function openCart(flavor,size){if(flavor&&cartAttempt){cartAttempt.innerHTML="You picked <strong>"+flavor+" \u2014 "+size+"</strong>.<br><span style='color:var(--muted)'>Great choice \u2014 it just can&rsquo;t be checked out yet while the shop is under remodeling. Join the launch list and it&rsquo;s yours the day we open.</span>";cartAttempt.classList.add("show")}if(cartDrawer){cartDrawer.classList.add("open");cartOverlay.classList.add("show")}}
     function closeCart(){if(cartDrawer){cartDrawer.classList.remove("open");cartOverlay.classList.remove("show")}}
     if(cartBtn)cartBtn.addEventListener("click",function(){openCart()});
     var cc=document.getElementById("cartClose"); if(cc)cc.addEventListener("click",closeCart);
@@ -446,12 +446,12 @@
     var mc=document.getElementById("mobileCartLink"); if(mc)mc.addEventListener("click",function(e){e.preventDefault();if(mobileMenu)mobileMenu.classList.remove("open");openCart()});
     var buy=document.querySelector(".fruit-buy");
     if(buy){var opts=buy.querySelectorAll(".size-opt");opts.forEach(function(o){o.addEventListener("click",function(){opts.forEach(function(x){x.setAttribute("aria-pressed","false")});o.setAttribute("aria-pressed","true")})});
-      var add=buy.querySelector(".add-btn"); if(add)add.addEventListener("click",function(){var sel=buy.querySelector('.size-opt[aria-pressed="true"]');openCart(add.getAttribute("data-flavor"),sel?sel.textContent.trim():"40 g");toast("Our shop is under remodeling \\u2014 online sales coming soon")});}
+      var add=buy.querySelector(".add-btn"); if(add)add.addEventListener("click",function(){var sel=buy.querySelector('.size-opt[aria-pressed="true"]');openCart(add.getAttribute("data-flavor"),sel?sel.textContent.trim():"40 g");toast("Our shop is under remodeling \u2014 online sales coming soon")});}
     var chatFab=document.getElementById("chatFab"),chatPanel=document.getElementById("chatPanel");
     function openChat(){chatPanel.classList.add("open");chatFab.setAttribute("aria-expanded","true")}
     function closeChat(){chatPanel.classList.remove("open");chatFab.setAttribute("aria-expanded","false")}
     if(chatFab&&chatPanel){chatFab.addEventListener("click",function(){chatPanel.classList.contains("open")?closeChat():openChat()});document.getElementById("chatClose").addEventListener("click",closeChat);
-      var FAQ=[["When do online sales open?","We are finishing our licensing and official packaging right now. Join the launch list on this page and you will get an email the day sales open \\u2014 before anyone else."],["What flavors do you have?","Seven flavors: Pineapple, Mango, Strawberry, Orange, Banana, Apple and Tropical Mix. Every pouch is just the fruit \\u2014 nothing else."],["What sizes are the pouches?","Two sizes: 40 g grab-and-go pouches and 200 g share bags, plus the Premium Cocktail Garnish line (3 OZ / 85 g) for bars, bakeries and hotels."],["What are the ingredients?","One ingredient: the fruit itself. No added sugar, no preservatives, no artificial colors \\u2014 and nothing you cannot pronounce."],["Do you sell wholesale or to stores?","Yes \\u2014 wholesale and local store interest is welcome now. Email Info@Drypical.com with your store name and what you are interested in."],["Where is Drypical made?","Prepared in small batches in Princeton, Texas by our founder. Real fruit, real flavor."],["Is Drypical allergen-free?","Our products are made with fruit only: no nuts and none of the major allergens as ingredients, in a space dedicated just to fruit. Every pouch is one ingredient: the fruit itself."],["Do you ship?","Online sales open with our first batch. Join the launch list on this page and you will be the first to know the shipping options the day we open."],["How can I talk to a person?","Email us at Info@Drypical.com or message us on Instagram @drypical_tx \\u2014 a person (the founder) answers everything."]];
+      var FAQ=[["When do online sales open?","We are finishing our licensing and official packaging right now. Join the launch list on this page and you will get an email the day sales open \u2014 before anyone else."],["What flavors do you have?","Seven flavors: Pineapple, Mango, Strawberry, Orange, Banana, Apple and Tropical Mix. Every pouch is just the fruit \u2014 nothing else."],["What sizes are the pouches?","Two sizes: 40 g grab-and-go pouches and 200 g share bags, plus the Premium Cocktail Garnish line (3 OZ / 85 g) for bars, bakeries and hotels."],["What are the ingredients?","One ingredient: the fruit itself. No added sugar, no preservatives, no artificial colors \u2014 and nothing you cannot pronounce."],["Do you sell wholesale or to stores?","Yes \u2014 wholesale and local store interest is welcome now. Email Info@Drypical.com with your store name and what you are interested in."],["Where is Drypical made?","Prepared in small batches in Princeton, Texas by our founder. Real fruit, real flavor."],["Is Drypical allergen-free?","Our products are made with fruit only: no nuts and none of the major allergens as ingredients, in a space dedicated just to fruit. Every pouch is one ingredient: the fruit itself."],["Do you ship?","Online sales open with our first batch. Join the launch list on this page and you will be the first to know the shipping options the day we open."],["How can I talk to a person?","Email us at Info@Drypical.com or message us on Instagram @drypical_tx \u2014 a person (the founder) answers everything."]];
       var faqLog=document.getElementById("faqLog"),faqChips=document.getElementById("faqChips");
       FAQ.forEach(function(pair){var chip=document.createElement("button");chip.type="button";chip.className="faq-chip";chip.textContent=pair[0];chip.addEventListener("click",function(){var q=document.createElement("div");q.className="bubble bubble-q";q.textContent=pair[0];faqLog.appendChild(q);var a=document.createElement("div");a.className="bubble bubble-a";a.textContent=pair[1];faqLog.appendChild(a);faqLog.scrollTo({top:faqLog.scrollHeight,behavior:"smooth"})});faqChips.appendChild(chip)});}
     document.addEventListener("keydown",function(e){if(e.key==="Escape"){closeChat();closeCart()}});

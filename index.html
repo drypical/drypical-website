@@ -668,5 +668,91 @@ a.product-media{display:block;cursor:pointer}
     } else { document.querySelectorAll(".reveal").forEach(function(el){el.classList.add("in")}); }
   </script>
 <script>document.querySelectorAll("video.chat-fab-img,video.chat-avatar").forEach(function(v){function p(){if(v.paused){v.play().catch(function(){})}}p();document.addEventListener("touchstart",p,{once:true});document.addEventListener("click",p,{once:true});});</script>
+<style>
+  .dry-welcome{ position:fixed; inset:0; z-index:9999; background:rgba(20,32,14,.58); display:flex; align-items:center; justify-content:center; padding:16px; }
+  .dry-welcome[hidden]{ display:none; }
+  .dry-welcome-card{ position:relative; background:#fffdf6; width:min(94vw,440px); max-height:92vh; overflow:auto; border-radius:22px; padding:26px 24px 20px; text-align:center; box-shadow:0 24px 60px rgba(0,0,0,.35); border-top:6px solid #f5b81f; font-family:var(--font-body); color:#1e2418; }
+  .dry-welcome-x{ position:absolute; top:10px; right:12px; width:36px; height:36px; border-radius:50%; border:1px solid #e7dcbc; background:#fff; font-size:21px; line-height:1; cursor:pointer; color:#6f684f; }
+  .dry-welcome-logo{ width:172px; max-width:60%; height:auto; display:block; margin:2px auto 8px; }
+  .dry-welcome-card h2{ margin:4px 0 8px; font-size:26px; color:#145c2c; font-family:var(--font-display); }
+  .dry-welcome-card p{ margin:8px 0; font-size:15px; line-height:1.5; }
+  .dry-welcome-sub{ font-size:16px !important; }
+  .dry-welcome-badges{ margin:12px auto 4px; font-size:11px; font-weight:700; letter-spacing:.06em; color:#145c2c; border:1.5px solid #23863e; border-radius:999px; padding:7px 10px; display:inline-block; }
+  .dry-welcome-card form{ margin-top:14px; display:flex; flex-direction:column; gap:9px; }
+  .dry-welcome-card input{ width:100%; box-sizing:border-box; padding:12px 14px; border:1.5px solid #ddd2ae; border-radius:12px; font-size:16px; font-family:inherit; background:#fff; }
+  .dry-welcome-card input:focus{ outline:none; border-color:#23863e; }
+  #dw-submit{ background:#23863e; color:#fff; border:none; border-radius:12px; padding:13px; font-size:16px; font-weight:700; cursor:pointer; font-family:inherit; }
+  #dw-submit:hover{ background:#1a6e31; }
+  #dw-submit:disabled{ opacity:.6; cursor:default; }
+  .dry-welcome-msg{ min-height:18px; font-size:13.5px; margin:2px 0 0; }
+  .dry-welcome-msg.err{ color:#b3261e; }
+  .dry-welcome-msg.ok{ color:#145c2c; font-weight:600; }
+  .dry-welcome-ok{ font-size:16px; font-weight:600; color:#145c2c; line-height:1.5; }
+  .dry-welcome-fine{ font-size:12px; color:#6f684f; margin-top:10px !important; }
+</style>
+<div id="dry-welcome" class="dry-welcome" hidden>
+  <div class="dry-welcome-card" role="dialog" aria-modal="true" aria-labelledby="dry-welcome-title">
+    <button class="dry-welcome-x" id="dry-welcome-close" aria-label="Close">&times;</button>
+    <img src="assets/logo.jpg" alt="Drypical — Real Fruit, Real Flavor" class="dry-welcome-logo">
+    <h2 id="dry-welcome-title">Welcome to Drypical! 🍍</h2>
+    <p class="dry-welcome-sub"><strong>Our subscription is under construction — but registration is now OPEN.</strong></p>
+    <p>You&rsquo;re joining the founding list of a real fruit company: <em>Real Fruit, Real Flavor</em> — no added sugar, no artificial colors, no preservatives. Just fruit.</p>
+    <p>Be first in line for the <strong>First Season</strong>: our variety box of small dried-fruit bags, with a <strong>collectible Pi&ntilde;ita surprise</strong> in every box.</p>
+    <div><span class="dry-welcome-badges">NO ADDED SUGAR &middot; NO ARTIFICIAL COLORS &middot; NO PRESERVATIVES &middot; JUST FRUIT</span></div>
+    <form id="dry-welcome-form" novalidate>
+      <input type="text" id="dw-name" placeholder="Your name" autocomplete="name">
+      <input type="email" id="dw-email" placeholder="Your email" autocomplete="email">
+      <input type="tel" id="dw-phone" placeholder="Your phone" autocomplete="tel">
+      <button type="submit" id="dw-submit">Join the list</button>
+      <p class="dry-welcome-msg" id="dw-msg"></p>
+    </form>
+    <p class="dry-welcome-fine">We&rsquo;ll only contact you about the First Season launch. No spam, ever.</p>
+  </div>
+</div>
+<script>
+(function(){
+  var KEY = 'drypical_welcome_v1';
+  var seen = false;
+  try { seen = !!localStorage.getItem(KEY); } catch(e){}
+  var box = document.getElementById('dry-welcome');
+  if(!box) return;
+  function show(){ box.hidden = false; document.body.style.overflow = 'hidden'; }
+  function hide(){ box.hidden = true; document.body.style.overflow = ''; try { localStorage.setItem(KEY, 'closed'); } catch(e){} }
+  if(!seen){ setTimeout(show, 900); }
+  document.getElementById('dry-welcome-close').addEventListener('click', hide);
+  box.addEventListener('click', function(e){ if(e.target === box) hide(); });
+  var form = document.getElementById('dry-welcome-form');
+  var msg = document.getElementById('dw-msg');
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    var name = document.getElementById('dw-name').value.trim();
+    var email = document.getElementById('dw-email').value.trim().toLowerCase();
+    var phone = document.getElementById('dw-phone').value.trim();
+    if(!name || !email || !phone){ msg.textContent = 'Please fill in your name, email and phone.'; msg.className = 'dry-welcome-msg err'; return; }
+    var btn = document.getElementById('dw-submit');
+    btn.disabled = true; btn.textContent = 'Joining…';
+    msg.textContent = ''; msg.className = 'dry-welcome-msg';
+    fetch('https://diplegxbpigjyurecmcr.supabase.co/rest/v1/suscriptores', {
+      method: 'POST',
+      headers: { 'apikey': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImRpcGxlZ3hicGlnanl1cmVjbWNyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTEzNzUyMDUsImV4cCI6MjEwNjk1MTIwNX0.-dWBvGO0XaOo28rODAnOyR4O62iVzrDBWZeADcZceSc', 'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImRpcGxlZ3hicGlnanl1cmVjbWNyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTEzNzUyMDUsImV4cCI6MjEwNjk1MTIwNX0.-dWBvGO0XaOo28rODAnOyR4O62iVzrDBWZeADcZceSc', 'Content-Type': 'application/json', 'Prefer': 'return=minimal' },
+      body: JSON.stringify({ nombre: name, correo: email, telefono: phone, fuente: 'web' })
+    }).then(function(r){
+      if(r.status === 201){
+        form.innerHTML = '<p class="dry-welcome-ok">🎉 You&rsquo;re on the list! Welcome to the founding season — we&rsquo;ll let you know the moment the First Season opens.</p>';
+        try { localStorage.setItem(KEY, 'registered'); } catch(e){}
+      } else if(r.status === 409){
+        msg.textContent = 'That email is already registered — you&rsquo;re on the list! 🎉'; msg.className = 'dry-welcome-msg ok';
+        btn.disabled = false; btn.textContent = 'Join the list';
+      } else {
+        msg.textContent = 'Something went wrong. Please try again in a moment.'; msg.className = 'dry-welcome-msg err';
+        btn.disabled = false; btn.textContent = 'Join the list';
+      }
+    }).catch(function(){
+      msg.textContent = 'Connection problem. Please try again.'; msg.className = 'dry-welcome-msg err';
+      btn.disabled = false; btn.textContent = 'Join the list';
+    });
+  });
+})();
+</script>
 </body>
 </html>

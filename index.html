@@ -179,15 +179,11 @@
     details p{color:var(--muted);padding-bottom:20px;margin:0}
 
     /* Launch / Contact */
-    .launch{background:var(--green);color:#eef6ec;border-radius:28px;padding:56px;display:grid;grid-template-columns:1.15fr .85fr;gap:44px;position:relative;overflow:hidden}
+    .launch{background:var(--green);color:#eef6ec;border-radius:28px;padding:56px;display:grid;grid-template-columns:1fr;gap:44px;position:relative;overflow:hidden}
     .launch::after{content:"";position:absolute;right:-90px;top:-90px;width:320px;height:320px;border-radius:50%;background:rgba(245,184,31,.22)}
     .launch h2{color:#fff}.launch .lead{color:#d5e5d0}
     .launch-list{list-style:none;padding:0;margin:20px 0 0;display:grid;gap:10px;position:relative;z-index:1}
     .launch-list li{display:flex;gap:10px;font-weight:600}.launch-list li::before{content:"✓";color:var(--gold);font-weight:900}
-    .launch-form{position:relative;z-index:1;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.22);border-radius:20px;padding:26px}
-    .launch-form label{display:block;font-size:.85rem;font-weight:800;margin:12px 0 5px}
-    .launch-form input,.launch-form textarea{width:100%;border:1.5px solid rgba(255,255,255,.3);border-radius:11px;padding:12px 14px;font:400 .96rem var(--font-body);background:#fff;color:#1e2418}
-    .launch-form .btn{width:100%;margin-top:16px}
     .contact-line{margin-top:28px;font-size:.95rem;color:#d5e5d0}.contact-line a{color:#fff;font-weight:800}
 
     footer{border-top:1px solid var(--line);padding:44px 0 64px}
@@ -209,7 +205,7 @@
     .concept-note{font-size:.78rem;color:var(--muted);text-align:center;margin-top:16px}
 
     @media(max-width:960px){.flavor-grid,.shop-grid{grid-template-columns:repeat(2,1fr)}.steps{grid-template-columns:1fr}.hero-grid,.about-grid,.compare-grid,.launch{grid-template-columns:1fr}.compare-col.bad{border-right:none;border-bottom:1px solid var(--line)}.launch{padding:38px 28px}.footer-meta{margin-left:0;text-align:left}}
-    @media(max-width:760px){.nav{display:none}.menu-btn{display:inline-flex;margin-left:8px}section{padding:52px 0}.hero{padding:44px 0 64px}.flavor-grid{grid-template-columns:1fr 1fr}.proof{grid-template-columns:1fr}.sticker{width:96px;height:96px;font-size:.88rem}.cart-btn .cart-tag{display:none}.cart-btn{padding:10px 13px}}
+    @media(max-width:760px){.nav{display:none}.menu-btn{display:inline-flex;margin-left:8px}section{padding:52px 0}.hero{padding:44px 0 64px}.flavor-grid{grid-template-columns:1fr 1fr}.proof{grid-template-columns:1fr}.sticker{width:96px;height:96px;font-size:.88rem}.cart-btn .cart-tag{display:none}.cart-btn{padding:10px 13px}.chat-fab{width:64px;height:64px;right:14px;bottom:calc(16px + env(safe-area-inset-bottom))}.chat-panel{bottom:96px}}
     @media(max-width:420px){.flavor-grid,.shop-grid{grid-template-columns:1fr}}
     @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition:none!important;animation:none!important}.reveal{opacity:1;transform:none}}
       .tx-flag{height:17px;width:auto;border-radius:2px;vertical-align:-3px;margin-right:7px;box-shadow:0 0 0 1px rgba(90,62,10,.18)}
@@ -528,17 +524,6 @@ a.product-media{display:block;cursor:pointer}
               <a class="btn btn-outline-light btn-sm" href="https://www.instagram.com/drypical_tx/" target="_blank" rel="noopener"><svg class="ig-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="2.5" width="19" height="19" rx="5.5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.6" r="1.15" fill="currentColor" stroke="none"/></svg>Follow on Instagram</a>
             </div>
           </div>
-          <form class="launch-form" id="launchForm">
-            <strong style="font-family:var(--font-display);font-size:1.2rem">Join the launch list</strong>
-            <p style="font-size:.9rem;color:#d5e5d0;margin:6px 0 4px">Tell us who you are — we&rsquo;ll open your email app with your spot reserved.</p>
-            <label for="launchName">Your name</label>
-            <input id="launchName" type="text" placeholder="Jane Doe" autocomplete="name" />
-            <label for="launchInterest">I&rsquo;m interested in</label>
-            <input id="launchInterest" type="text" placeholder="First batch, wholesale, a flavor…" />
-            <button class="btn btn-orange" type="submit">Reserve my spot →</button>
-            <p style="font-size:.82rem;color:#cfe0ca;text-align:center;margin:10px 0 0">We usually reply within a day.</p>
-            <p style="font-size:.82rem;color:#cfe0ca;text-align:center;margin:6px 0 0">We will only write to you about the launch and Drypical subscription news — a few messages a year, never spam. Unsubscribe anytime.</p>
-          </form>
         </div>
       </div>
     </section>
@@ -595,7 +580,6 @@ a.product-media{display:block;cursor:pointer}
     var EMAIL="Info@Drypical.com";
     var toastEl=document.getElementById("toast"),toastTimer=null;
     function toast(m){toastEl.textContent=m;toastEl.classList.add("show");clearTimeout(toastTimer);toastTimer=setTimeout(function(){toastEl.classList.remove("show")},2600)}
-    function goMailto(h){var a=document.createElement("a");a.href=h;a.style.display="none";document.body.appendChild(a);a.click();setTimeout(function(){if(a.parentNode)a.parentNode.removeChild(a)},600)}
     var menuBtn=document.getElementById("menuBtn"),mobileMenu=document.getElementById("mobileMenu");
     function toggleMenu(f){var o=typeof f==="boolean"?f:!mobileMenu.classList.contains("open");mobileMenu.classList.toggle("open",o);menuBtn.setAttribute("aria-expanded",String(o))}
     menuBtn.addEventListener("click",function(){toggleMenu()});
@@ -646,14 +630,6 @@ a.product-media{display:block;cursor:pointer}
       });
     });
 
-    document.getElementById("launchForm").addEventListener("submit",function(e){
-      e.preventDefault();
-      var n=document.getElementById("launchName"),i=document.getElementById("launchInterest");
-      if(n.value.trim()===""){toast("Please add your name to join the list");n.focus();return}
-      var body="Name: "+n.value.trim()+"\nInterested in: "+(i.value.trim()||"First batch")+"\n\nPlease add me to the Drypical launch list.";
-      goMailto("mailto:"+EMAIL+"?subject="+encodeURIComponent("Launch list — "+n.value.trim())+"&body="+encodeURIComponent(body));
-      toast("Opening your email app to reserve your spot…");
-    });
     document.getElementById("copyEmail").addEventListener("click",function(){
       if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(EMAIL).then(function(){toast("Email copied: "+EMAIL)})}
       else{var t=document.createElement("textarea");t.value=EMAIL;document.body.appendChild(t);t.select();try{document.execCommand("copy");toast("Email copied")}catch(e){toast(EMAIL)}document.body.removeChild(t)}
@@ -709,12 +685,13 @@ a.product-media{display:block;cursor:pointer}
 <script>
 (function(){
   var KEY = 'drypical_welcome_v1';
+  var CLOSED = 'drypical_welcome_closed';
   var seen = false;
-  try { seen = !!localStorage.getItem(KEY); } catch(e){}
+  try { seen = !!localStorage.getItem(KEY) || !!sessionStorage.getItem(CLOSED); } catch(e){}
   var box = document.getElementById('dry-welcome');
   if(!box) return;
   function show(){ box.hidden = false; document.body.style.overflow = 'hidden'; }
-  function hide(){ box.hidden = true; document.body.style.overflow = ''; try { localStorage.setItem(KEY, 'closed'); } catch(e){} }
+  function hide(){ box.hidden = true; document.body.style.overflow = ''; try { sessionStorage.setItem(CLOSED, '1'); } catch(e){} }
   if(!seen){ setTimeout(show, 900); }
   document.getElementById('dry-welcome-close').addEventListener('click', hide);
   box.addEventListener('click', function(e){ if(e.target === box) hide(); });

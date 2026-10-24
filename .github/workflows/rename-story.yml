@@ -1,0 +1,24 @@
+name: Renombrar story (temporal)
+on:
+  push:
+    branches: [main]
+jobs:
+  renombrar:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - name: Reemplazar story.html con el archivo subido
+        run: |
+          if [ -f "drypical-p-gina-concepto-estilo-scroll.html" ]; then
+            git config user.name "drypical"
+            git config user.email "drypical@users.noreply.github.com"
+            rm -f story.html
+            mv drypical-p-gina-concepto-estilo-scroll.html story.html
+            git add -A
+            git commit -m "story.html: sin formulario, solo el botón a la portada"
+            git push
+          else
+            echo "Nada que renombrar."
+          fi

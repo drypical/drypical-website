@@ -253,40 +253,14 @@
         font-size:clamp(.98rem,1.5vw,1.12rem);line-height:1.6;
       }
       .box-note b{color:var(--gold);font-weight:800;}
-      form.join{
-        margin:34px auto 0;width:min(520px,100%);text-align:left;
-        display:grid;gap:12px;
-      }
-      form.join label{
-        font:600 .72rem/1 var(--font);letter-spacing:.22em;text-transform:uppercase;color:var(--ink-faint);
-        display:block;margin-bottom:7px;
-      }
-      form.join input{
-        width:100%;padding:15px 16px;border-radius:10px;
-        border:1px solid var(--field-line);background:var(--field);
-        color:var(--ink);font:500 1rem/1.3 var(--font);
-        outline:none;transition:border-color .2s ease,background .2s ease;
-      }
-      form.join input::placeholder{color:var(--ink-faint);}
-      form.join input:focus{border-color:var(--gold);background:rgba(246,239,221,.09);}
       .cta{
-        margin-top:8px;padding:17px 22px;border:0;border-radius:10px;cursor:pointer;
+        display:block;margin:34px auto 0;width:min(520px,100%);
+        padding:19px 22px;border-radius:10px;text-decoration:none;text-align:center;
         background:linear-gradient(180deg,#ffb62e,var(--orange));
-        color:#211103;font:800 1rem/1 var(--font);letter-spacing:.1em;text-transform:uppercase;
+        color:#211103;font:800 1.05rem/1 var(--font);letter-spacing:.1em;text-transform:uppercase;
         transition:transform .2s ease,filter .2s ease;
       }
       .cta:hover{transform:translateY(-2px);filter:brightness(1.05);}
-      .cta:disabled{opacity:.6;cursor:wait;transform:none;}
-      .reg-msg{min-height:1.4em;margin:4px 0 0;font-size:.95rem;line-height:1.5;}
-      .reg-msg.err{color:var(--err);}
-      .reg-msg.ok{color:var(--ok);}
-      .reg-ok{
-        margin:34px auto 0;max-width:30rem;font-size:1.15rem;line-height:1.6;color:var(--ink);
-        border:1px solid rgba(168,224,127,.4);border-radius:12px;padding:22px 24px;background:rgba(127,176,105,.08);
-      }
-      .consent{
-        margin:16px auto 0;max-width:32rem;font-size:.78rem;line-height:1.55;color:var(--ink-faint);
-      }
       footer{
         margin-top:52px;padding-top:22px;border-top:1px solid var(--line);
         width:min(880px,100%);
@@ -314,7 +288,7 @@
         <span class="brand-name">DRYPICAL</span>
       </a>
       <div class="top-actions">
-        <a class="join-pill" href="#join">Join the First Season</a>
+        <a class="join-pill" href="https://www.drypical.com/">Join the First Season</a>
         <a class="close-btn" href="https://www.drypical.com/" aria-label="Close">✕</a>
       </div>
     </header>
@@ -408,23 +382,7 @@
         <p class="sub">Drypical is being prepared in Princeton, Texas — licenses and final packaging are underway, and the founding list hears everything first.</p>
         <p class="box-note">Founding members get first access to the <b>First Season box: 12 pouches (40&nbsp;g each)</b> across the seven fruits — with a <b>surprise collectible Piñita</b> tucked into every box.</p>
 
-        <form class="join" id="sub-form" novalidate>
-          <div>
-            <label for="sub-name">Name</label>
-            <input id="sub-name" name="nombre" type="text" autocomplete="name" placeholder="Your name" required />
-          </div>
-          <div>
-            <label for="sub-email">Email</label>
-            <input id="sub-email" name="correo" type="email" autocomplete="email" placeholder="you@email.com" required />
-          </div>
-          <div>
-            <label for="sub-phone">Phone</label>
-            <input id="sub-phone" name="telefono" type="tel" autocomplete="tel" placeholder="(555) 123-4567" required />
-          </div>
-          <button class="cta" id="sub-submit" type="submit">Join the founding list</button>
-          <p class="reg-msg" id="sub-msg" role="status" aria-live="polite"></p>
-        </form>
-        <p class="consent">By joining, you agree to receive emails and texts from Drypical about the First Season launch. Message &amp; data rates may apply; reply STOP to end texts, unsubscribe anytime from email. We never sell your information.</p>
+        <a class="cta" href="https://www.drypical.com/">Join the Founding List</a>
 
         <footer>
           <span>Drypical LLC · Princeton, Texas</span>
@@ -528,53 +486,6 @@
         }, { passive: true });
         paint();
       }
-
-      /* --- First Season signup → same list as drypical.com (Supabase · suscriptores) --- */
-      var form = document.getElementById("sub-form");
-      var msg = document.getElementById("sub-msg");
-      form.addEventListener("submit", function(e){
-        e.preventDefault();
-        var name = document.getElementById("sub-name").value.trim();
-        var email = document.getElementById("sub-email").value.trim().toLowerCase();
-        var phone = document.getElementById("sub-phone").value.trim();
-        if(!name || !email || !phone){
-          msg.textContent = "Please fill in your name, email and phone.";
-          msg.className = "reg-msg err"; return;
-        }
-        if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){
-          msg.textContent = "That email doesn't look complete — mind checking it?";
-          msg.className = "reg-msg err"; return;
-        }
-        var btn = document.getElementById("sub-submit");
-        btn.disabled = true; btn.textContent = "Joining…";
-        msg.textContent = ""; msg.className = "reg-msg";
-        fetch("https://diplegxbpigjyurecmcr.supabase.co/rest/v1/suscriptores", {
-          method: "POST",
-          headers: {
-            "apikey": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImRpcGxlZ3hicGlnanl1cmVjbWNyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTEzNzUyMDUsImV4cCI6MjEwNjk1MTIwNX0.-dWBvGO0XaOo28rODAnOyR4O62iVzrDBWZeADcZceSc",
-            "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImRpcGxlZ3hicGlnanl1cmVjbWNyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTEzNzUyMDUsImV4cCI6MjEwNjk1MTIwNX0.-dWBvGO0XaOo28rODAnOyR4O62iVzrDBWZeADcZceSc",
-            "Content-Type": "application/json",
-            "Prefer": "return=minimal"
-          },
-          body: JSON.stringify({ nombre: name, correo: email, telefono: phone, fuente: "web-concepto-scroll" })
-        }).then(function(r){
-          if(r.status === 201){
-            form.outerHTML = '<p class="reg-ok">You\'re on the list — welcome to the founding season. We\'ll write the moment the First Season opens.</p>';
-          } else if(r.status === 409){
-            msg.textContent = "Good news: that email is already on the list. You're all set — we'll let you know when the First Season opens.";
-            msg.className = "reg-msg ok";
-            btn.disabled = false; btn.textContent = "Join the founding list";
-          } else {
-            msg.textContent = "Something went wrong. Please try again in a moment.";
-            msg.className = "reg-msg err";
-            btn.disabled = false; btn.textContent = "Join the founding list";
-          }
-        }).catch(function(){
-          msg.textContent = "Connection problem. Please try again.";
-          msg.className = "reg-msg err";
-          btn.disabled = false; btn.textContent = "Join the founding list";
-        });
-      });
     })();
     </script>
   </body>

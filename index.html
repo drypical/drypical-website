@@ -383,6 +383,74 @@
         <p class="box-note">Founding members get first access to the <b>First Season box: 12 pouches (40&nbsp;g each)</b> across the seven fruits — with a <b>surprise collectible Piñita</b> tucked into every box.</p>
 
         <a class="cta" href="https://www.drypical.com/home.html">Join the Founding List</a>
+        <div class="hg-wrap">
+          <style>
+            .hg-wrap{max-width:520px;margin:26px auto 6px;padding:22px 20px;border:1px solid rgba(255,255,255,.22);border-radius:16px;background:rgba(255,255,255,.06);text-align:center}
+            .hg-title{font-weight:700;letter-spacing:.04em;margin:0 0 6px;color:#ffb347}
+            .hg-note{margin:0 0 14px;opacity:.92;line-height:1.45}
+            .hg-btns{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:0 0 16px}
+            .hg-btn{display:inline-block;padding:10px 16px;border-radius:999px;border:1px solid rgba(255,255,255,.45);color:#fff;text-decoration:none;font-weight:600}
+            .hg-btn:hover{background:rgba(255,255,255,.12)}
+            .hg-form{display:flex;flex-direction:column;gap:10px}
+            .hg-form input{padding:12px 14px;border-radius:10px;border:1px solid rgba(255,255,255,.35);background:rgba(0,0,0,.25);color:#fff;font-size:16px}
+            .hg-form input::placeholder{color:rgba(255,255,255,.65)}
+            .hg-submit{padding:13px 16px;border:0;border-radius:999px;background:#ff7a1a;color:#fff;font-weight:700;font-size:16px;cursor:pointer}
+            .hg-msg{min-height:20px;margin:4px 0 0;line-height:1.4}
+            .hg-msg.err{color:#ff9c9c}.hg-msg.ok{color:#9fe8a9}
+            .hg-ok{line-height:1.5;margin:6px 0}
+            .hg-fine{font-size:12px;opacity:.65;margin:10px 0 0}
+          </style>
+          <p class="hg-title">🎁 FIRST HARVEST GIVEAWAY — 50 WINNERS</p>
+          <p class="hg-note">Our very first harvest becomes 50 gifts. Do the three steps: follow us, subscribe, and register right here.</p>
+          <div class="hg-btns">
+            <a class="hg-btn" href="https://www.instagram.com/drypical_tx/" target="_blank" rel="noopener">Follow @drypical_tx</a>
+            <a class="hg-btn" href="https://www.youtube.com/@Drypical?sub_confirmation=1" target="_blank" rel="noopener">Subscribe on YouTube</a>
+          </div>
+          <form class="hg-form" id="hg-form" novalidate>
+            <input id="hg-name" type="text" placeholder="Your name" autocomplete="name">
+            <input id="hg-email" type="email" placeholder="Your email" autocomplete="email">
+            <input id="hg-phone" type="tel" placeholder="Your phone" autocomplete="tel">
+            <button class="hg-submit" id="hg-submit" type="submit">Register for the First Harvest</button>
+            <p class="hg-msg" id="hg-msg"></p>
+          </form>
+          <p class="hg-fine">Terms apply. One entry per person. Winners are drawn when our first production launches.</p>
+        </div>
+        <script>
+        (function(){
+          var form = document.getElementById('hg-form');
+          if(!form) return;
+          var msg = document.getElementById('hg-msg');
+          form.addEventListener('submit', function(e){
+            e.preventDefault();
+            var name = document.getElementById('hg-name').value.trim();
+            var email = document.getElementById('hg-email').value.trim().toLowerCase();
+            var phone = document.getElementById('hg-phone').value.trim();
+            if(!name || !email || !phone){ msg.textContent = 'Please fill in your name, email and phone.'; msg.className = 'hg-msg err'; return; }
+            var btn = document.getElementById('hg-submit');
+            btn.disabled = true; btn.textContent = 'Joining\u2026';
+            msg.textContent = ''; msg.className = 'hg-msg';
+            fetch('https://diplegxbpigjyurecmcr.supabase.co/rest/v1/suscriptores', {
+              method: 'POST',
+              headers: { 'apikey': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImRpcGxlZ3hicGlnanl1cmVjbWNyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTEzNzUyMDUsImV4cCI6MjEwNjk1MTIwNX0.-dWBvGO0XaOo28rODAnOyR4O62iVzrDBWZeADcZceSc', 'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImRpcGxlZ3hicGlnanl1cmVjbWNyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTEzNzUyMDUsImV4cCI6MjEwNjk1MTIwNX0.-dWBvGO0XaOo28rODAnOyR4O62iVzrDBWZeADcZceSc', 'Content-Type': 'application/json', 'Prefer': 'return=minimal' },
+              body: JSON.stringify({ nombre: name, correo: email, telefono: phone, fuente: 'web' })
+            }).then(function(r){
+              if(r.status === 201){
+                form.innerHTML = '<p class="hg-ok">\uD83C\uDF89 You&rsquo;re on the list! Welcome to the founding season — we&rsquo;ll let you know the moment the First Season opens.</p>';
+              } else if(r.status === 409){
+                msg.textContent = 'Thanks! If that email was already on the list, you are all set — we will let you know when the First Season opens. \uD83C\uDF89'; msg.className = 'hg-msg ok';
+                btn.disabled = false; btn.textContent = 'Register for the First Harvest';
+              } else {
+                msg.textContent = 'Something went wrong. Please try again in a moment.'; msg.className = 'hg-msg err';
+                btn.disabled = false; btn.textContent = 'Register for the First Harvest';
+              }
+            }).catch(function(){
+              msg.textContent = 'Connection problem. Please try again.'; msg.className = 'hg-msg err';
+              btn.disabled = false; btn.textContent = 'Register for the First Harvest';
+            });
+          });
+        })();
+        </script>
+
 
         <footer>
           <span>Drypical LLC · Princeton, Texas</span>
